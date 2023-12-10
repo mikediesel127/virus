@@ -1,0 +1,352 @@
+/* Button Styles */
+.button-primary, #submit-post {
+  width: 100%;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.button-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.button-secondary:hover {
+  background-color: var(--hover-light);
+}
+
+.button-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.button-success:hover {
+  background-color: var(--success-dark);
+}
+
+.button-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.button-danger:hover {
+  background-color: #c9302c;
+}
+
+.button-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.button-warning:hover {
+  background-color: #ec971f;
+}
+
+/* Profile Styles */
+.profile-component {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+  border-color: var(--info-color);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-x: auto;
+}
+
+.nav-item {
+  flex: 0 0 auto;
+  margin: 0 10px;
+  padding: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.nav-item.active {
+  color: var(--info-color);
+}
+
+/* Post Styles */
+.post {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1em;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.post-info .username {
+  font-weight: bold;
+  color: var(--text-color);
+}
+
+.post-info .date {
+  font-size: 0.8em;
+  color: var(--text-light);
+}
+
+.post-content {
+  margin-bottom: 15px;
+}
+
+.post-actions {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 15px;
+}
+
+.post-actions button {
+  background: var(--primary-color);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.post-actions button:hover {
+  background: var(--primary-dark);
+}
+
+.post-comments {
+  background: var(--hover-light);
+  padding: 10px;
+  border-radius: 4px;
+  display: none; /* Hidden by default */
+}
+
+/* Animation for comment section toggling */
+.toggle-slide {
+  display: block !important;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+  }
+  .nav-item {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-item span {
+    display: none;
+  }
+}
+
+/* Tooltip Styles */
+.tooltip {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-pic:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  padding: 5px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-dropdown .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--hover-light);
+}
+
+/* Additional Options Styles */
+.additional-options .options-btn {
+  background-color: #f9f9f9;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.additional-options .options-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Ensure the container of the profile picture is positioned relatively */
+.profile-header {
+  position: relative; /* This is the key part */
+  text-align: center;
+}
+
+/* Adjust the dropdown styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 10%; /* Position it right below the profile picture */
+  left: 20%; /* Center it horizontally */
+  transform: translateX(-50%) translateY(10px); /* Adjust vertical position and centering */
+  border-radius: 4px;
+  padding: 5px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-dropdown .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+/*----SEARCH BAR---*/
+
+#search-input {
+  /* ... */
+}
+
+#search-bar {
+  /* ... */
+}
+
+#search-results {
+  /* ... */
+}
+
+/* When visible, fade in the search results and move up slightly */
+#search-results.visible {
+  /* ... */
+}
+
+.search-result-item {
+  /* ... */
+}
+
+.search-result-img {
+  /* ... */
+}
+
+.search-result-text {
+  /* ... */
+}
+
+/* POST SUGGESTIONS */
+#suggestions-container {
+  /* ... */
+}
+
+#suggestions-container.visible {
+  /* ... */
+}
+
+.suggestion-item {
+  /* ... */
+}
+
+.suggestion-item:last-child {
+  /* ... */
+}
+
+.suggestion-item:hover {
+  /* ... */
+}
+
+/* Additional component-specific styles can be added below as needed */

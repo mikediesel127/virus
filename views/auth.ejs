@@ -1,0 +1,30 @@
+  <!-- Header included here -->
+<% if (!user) { %>
+    <!-- Authentication Container -->
+    <div id="auth-container">
+      <!-- Login Form -->
+      <form id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <span id="show-register">Register</span></p>
+      </form>
+      <!-- Register Form -->
+      <!-- Register Form -->
+<form id="register-form" style="display: none;">
+  <h2>Register</h2>
+  <input type="text" id="new-username" placeholder="Username" required>
+  <!-- Removed email input -->
+  <input type="password" id="new-password" placeholder="Password" required>
+  <button type="submit">Register</button>
+  <p>Already have an account? <span id="show-login">Login</span></p>
+</form>
+
+    </div>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- <script type="text/javascript" src="/public/js/app.js"></script> -->
+  
+
+
+<% } %>

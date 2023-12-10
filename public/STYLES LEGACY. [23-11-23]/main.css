@@ -1,0 +1,574 @@
+body, html {
+  margin: 0;
+    padding: 5px 25px;
+  font-family: 'Arial', sans-serif;
+/* background-color: var(--primary-color); */
+
+
+/*  background-image: url('uploads/bg-light-1.jpg');   */
+/*  background-image: url('uploads/bg-light-1.jpg') !important;  */
+
+      background-size: cover; /* or contain, depending on your needs */
+    background-position: center;
+  font-size: 1.1em;
+  line-height: 1.6;
+
+}
+
+h2 {
+  font-family: monospace;
+}
+
+h3 {
+      background: var(--tile-background);
+  margin: 0px !important;
+  padding: 0px !important;
+  color: var(--text-color);
+}
+
+p {
+    font-size: 1.0em;
+    display: flex;
+    flex-direction: column-reverse;
+    flex-wrap: wrap;
+    align-content: space-around;
+    /* left: 100px; */
+    justify-content: space-between;
+    align-items: flex-end;
+    text-align: start;
+}
+
+
+
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+/*Header Styles */
+#top-header {
+
+/*    background-color: var(--secondary-background); /* Updated */
+    color: var(--text-light); /* Updated */
+    display: flex;
+    padding: 10px 0;
+    transition: all 0.3s ease;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+        transition: 0.3s;
+    margin-bottom: 10px;
+}
+
+#top-header a {
+      display: flex;
+    color: #f2f2f2;
+    text-decoration: none;
+    justify-content: center;
+    font-size: 1.3em;
+    margin-left: 20px;
+}
+
+#top-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--danger-color); /* Updated */
+    transition: all 0.3s ease;
+}
+
+/* Sticky Header Styles */
+.sticky {
+    position: fixed !important;
+    top: -3px !important;
+    left: 0;
+    width: 100% !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+    background-color: var(--primary-background) !important; /* Updated */
+padding: 5px 29px !important;
+    z-index: 1111;
+    transition: 0.3s;
+}
+
+
+
+/* Version Number Styles */
+.version-number {
+    font-size: 0.8em;
+    color: var(--text-light); /* Updated */
+    margin-left: 9px;
+    font-weight: normal;
+}
+
+
+
+
+/* Color Palette */
+:root {
+  --primary-color: #5d67df; /* Elite purple (lightblueish) */
+  --primary-dark: #5234bb; /* Darker shade of purple */
+  --primary-background: #f4f4f2 ; /* Darker shade of grey like discord UI */
+     --secondary-background: #39366814 ; /* Darker shade of grey like discord UI */
+  --secondary-color: #f4f4f4; /* Light grey for backgrounds */
+  --text-color: #333; /* Dark grey for text */
+  --text-light: #777; /* Light grey for secondary text */
+  --border-color: #ddd; /* Light grey for borders */
+  --hover-light: #f1f1f1; /* Light grey for hover states */
+  --success-color: #23a55a; /* Green for success states */
+  --success-dark: #23a55a; /* Darker green for success states */
+  --info-color: #007bff; /* Blue for informational text */
+  --danger-color: #f23f42; /* Red for danger states */
+  --warning-color: #f0ad4e; /* Yellow for warning states */
+  --action-button: #5663ebe3; /* Yellow for warning states */
+  --button-text-color: white; /* Yellow for warning states */
+  --button-text-dark: #333; /* Yellow for warning states */
+
+  --background-trans: #50527d08;
+
+  --tile-background: #4351703d;
+}
+
+body.dark-mode {
+  /* Dark mode variables */
+  --primary-color: #222327; /* Example dark mode primary color */
+  --secondary-color: #313338; /* Darker background */
+  --text-color: #e0e0e0; /* Lighter text */
+  --border-color: #444; /* Darker borders */
+  /* ... other variables for dark mode */
+   --primary-background: #2d3443 ; /* Darker shade of grey like discord UI */
+   --secondary-background: #333b4a96 ; /* Darker shade of grey like discord UI */
+   --background-trans: #50527d6e;
+
+  --tile-background: #4351703d;
+     --border-color: #1b2026b0; /* Light grey for borders */
+       background-image: url('uploads/13107748_5137843.jpg') !important; 
+
+/*    background: linear-gradient(45deg, #223045, #4b7eb582);*/
+}
+
+
+
+/* Update other styles similarly */
+
+
+/* Utility Classes */
+.text-primary {
+  color: var(--primary-color);
+}
+
+.bg-primary {
+  background-color: var(--primary-color);
+}
+
+.border-primary {
+  border-color: var(--primary-color);
+}
+
+/* Button Styles */
+button, .button {
+    padding: 0.5em;
+    margin-bottom: 0.5em;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1.1em;
+    background-color: var(-);
+    background: var(--button-text-dark);
+    color: var(--button-text-color);
+}
+
+/* Link Styles */
+.link, #show-register, #show-login {
+  color: var(--info-color);
+  cursor: pointer;
+}
+
+/* Form Styles */
+form {
+  background: var(--background-trans); /* Updated */
+  padding: 2em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+  label {
+    color: var(--text-color);
+
+}
+
+input[type="text"], input[type="password"], textarea {
+    width: 95%;
+    padding: 0.45em;
+    margin-bottom: 1em;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-size: 1.2em;
+    color: var(--text-color);
+    background-color: var(--button-text-dark);
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive adjustments for mobile-first approach */
+@media (max-width: 600px) {
+  #auth-container, form, .profile-component, #dashboard, .  {
+    padding: 1em;
+  }
+
+
+  .navbar a {
+    padding: 10px 15px;
+    text-decoration: none;
+    color: inherit;
+  }
+
+a {
+    padding: 10px 15px;
+    text-decoration: none !important;
+    color: black !important;
+  }
+
+
+  .nav-item {
+    margin: 0 5px; /* Reduce margin for nav items */
+  }
+
+  #search-bar{
+    display: none;
+  }
+}
+
+/*------USER PROFILE-----*/
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--secondary-background); /* Use a subtle background color */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px; /* Space between picture and text */
+}
+
+.profile-info {
+    flex-grow: 1; /* Allow the text section to take up remaining space */
+}
+
+.username {
+    font-size: 1.5em;
+    color: var(--text-color);
+    margin-bottom: 5px;
+}
+
+.bio {
+    margin-bottom: 15px;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+.edit-profile-btn {
+    background: var(--action-button);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+}
+
+.edit-profile-btn:hover {
+    background: var(--hover-light);
+}
+
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.stat-tile {
+    background: var(--tile-background);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.stat-tile:hover {
+    background: #435170a8;
+}
+
+.stat-number {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-light);
+}
+
+.profile-details {
+    padding: 10px;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.interests, .friend-count {
+  color: var(--info-color); /* Updated */
+}
+
+/* main.css */
+/* ... other styles ... */
+#main-content{
+/*    background-image: url('download.jpg') !important;  */
+}
+
+/* Style for the dark mode toggle switch */
+
+
+
+
+html.dark-mode{
+
+}
+
+/* ... more dark mode styles ... */
+/* Add this to your main CSS file or within a <style> tag in your layout.ejs */
+/*-----------BUBBLE----------------------------*/
+/* Existing styles for bubbles */
+/*Header Styles */
+/*Header Styles */
+#top-header {
+    color: var(--text-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+#top-header a, #top-header h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 1.3em;
+    color: var(--text-color);
+}
+
+.sticky {
+    position: fixed !important;
+    top: 0 !important;
+    left: 0;
+    width: 100% !important;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1) !important;
+    background-color: var(--primary-background) !important;
+    padding: 5px 15px !important;
+    z-index: 1111;
+    transition: 0.3s;
+}
+
+/* Bubbles Styles */
+#bubbles {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.bubbles {
+    font-size: 1.25em;
+    display: flex;
+}
+
+.bubble {
+    border: 1px solid #454868eb;
+    padding: 5px 20px;
+    border-radius: 50px;
+    color: var(--text-color);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Media Query for Very Small Screens */
+@media (max-width: 480px) {
+    /* Styles for very small screens */
+    #top-header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    #top-header a, #top-header h2 {
+        margin-bottom: 5px;
+    }
+
+    .bubble {
+        padding: 5px 10px;
+    }
+
+    #bubbles {
+        gap: 5px;
+    }
+}
+
+
+
+.bubble:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+/*  background-color: #0056b3; /* Darken color on hover */
+/*  background-color: var(--primary-dark); /* Updated */*/
+  background-color:#185ca657; /* Updated */
+
+
+}
+
+.bubble.active {
+    font-size: 1.1em;
+    /* font-weight: 700; */
+    color: #ffffff;
+    background-color: #434453;
+
+}
+  .search-active{
+ background-color: #434453 !important;
+}  
+.notify-active{
+ background-color: #434453 !important;
+}
+
+
+
+/* Section Styles */
+.section {
+    display: grid;
+    justify-content: center;
+    align-items: end;
+    padding: 20px;
+    transition: opacity 0.5s ease;
+    text-align: center;
+    align-content: stretch;
+
+}
+
+/* Show the section with a fade-in effect */
+.section.show {
+  opacity: 1;
+}
+
+/* Add some animations for the transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Apply the animation */
+.section.show {
+  animation: fadeIn 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #bubbles {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bubble {
+    margin-bottom: 10px;
+  }
+  .main-logo{
+display: none !important;
+}
+}
+
+
+
+/*-------RESPONSE TO TURN HEADER INTO ICONS--------*/
+/* Default style for text and icons */
+/* Default style for icons (visible on larger screens) */
+.bubble .icon {
+    display: inline; /* Show icons by default */
+    margin-right: 5px;
+}
+
+/* Media Query for Mobile Screens */
+@media (max-width: 675px) {
+    .bubble .icon {
+        display: inline; /* Keep icons visible on smaller screens */
+    }
+
+    .bubble span {
+        display: none; /* Hide text on smaller screens */
+    }
+}
+/*---------------BUBBLE--END----------------*/
+/*---------------BUBBLE--END----------------*/
+

@@ -1,0 +1,56 @@
+
+  <!-- External Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  
+
+
+  <!-- External Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+
+
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" type="text/css" href="components.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+<div id="community-page" class="community-component component">
+  <div class="community-header">
+    <!-- Profile Picture, Community Name, Bio -->
+    <h2><%= community.name %></h2>
+  </div>
+
+  <div class="community-stats">
+    <!-- Stat Tiles: Posts, Points, Communities -->
+  </div>
+
+<div class="community-details">
+  <!-- Action Buttons: Request Rank, Leave, etc. -->
+  <button class="action-button" id="request-rank-button">Request Rank</button>
+  <button class="action-button" id="leave-community-btn">Leave</button>
+</div>
+
+
+
+
+  <!-- ACTION BAR -->
+  <div id="action-bar">
+    <!-- Session Creation Trigger Icon -->
+    <div id="session-creation-trigger" class="session-creation-trigger trigger">
+      <label>note </label><i class="fas fa-plus-circle"></i>
+    </div>
+  </div>
+</div>
+
+  <!-- External Scripts -->
+<!-- Display Community Members -->
+<div class="community-members">
+  <h4>Community Members</h4>
+  <ul>
+    <% community.members.forEach(member => { %>
+      <li><%= member.username %></li>
+    <% }); %>
+  </ul>
+</div>
+<script src="app.js"></script>

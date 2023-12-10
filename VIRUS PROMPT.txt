@@ -1,0 +1,30 @@
+Current VIRUS:
+1. Landing Page After Login:
+Feed: A central feed that displays posts from followed users and subscribed topics, similar to Twitter and Facebook.
+Trending Sidebar: A sidebar or section that shows trending topics or 'Top 8 xx' lists, akin to Twitter's trending topics and Reddit's popular subreddits.
+Stories/Status Updates: A stories section at the top, similar to Instagram/Facebook stories, for temporary content sharing.
+2. Navigation:
+Bottom Navigation Bar: A mobile-friendly bottom navigation bar with icons for Home, Search, Post Creation, Notifications, and Profile.
+Swipe Navigation: Allow users to swipe between main sections (Feed, Search/Discover, Notifications, Profile).
+3. Content Interaction:
+Like, Comment, Share: Standard social media interactions available on each post.
+Quick View: Tap on a post to expand it into a quick view for reading comments and adding a response, similar to Twitter.
+Infinite Scroll: An infinite scroll for the feed, with a smart loading mechanism to ensure performance.
+4. Content Creation:
+Floating Action Button (FAB): A FAB for creating new posts, which expands to show options like Text Post, Image/Video Upload, or Create 'Top 8 xx' List.
+Easy Media Upload: Intuitive and quick media upload options, encouraging rich content sharing.
+5. Profile and Customization:
+Customizable Profile: Allow users to customize their profile with a bio, profile picture, and cover photo.
+'Top 8 xx' Lists on Profile: Display users' 'Top 8 xx' lists prominently on their profile.
+6. Discoverability:
+Search: A powerful search function with filters for users, posts, and 'Top 8 xx' lists.
+Recommendations: "You might like" sections based on user activity and interests.
+7. Notifications:
+Real-time Notifications: For likes, comments, new followers, and mentions.
+Notification Settings: Allow users to customize what notifications they receive.
+8. Accessibility and Performance:
+Lazy Loading Images: To improve performance and data usage.
+Dark Mode: To enhance accessibility and user preference.
+9. Responsive Design:
+Media Queries: To ensure the app looks good on all devices.
+Touch-friendly Components: Larger touch targets for mobile users.

@@ -1,0 +1,127 @@
+<%- include('layout', {
+  title: 'Home Page',
+  body: `
+    <!-- Sidebar -->
+    <div  id="people-sidebar" class="sidebar">
+      <div class="close-btn" onclick="closeSidebar()">&times;</div>
+
+      <!-- Top Communities Section -->
+      <div class="sidebar-section">
+        <h2 class='top-communities'>Communities</h2>
+        <ul id="communityList">
+          <!-- Communities will be dynamically added here -->
+          <p>refresh list...</p>
+        </ul>
+      </div>
+
+      <!-- Top Friends Section -->
+      <div class="sidebar-section">
+        <h2 class='top-friends'>Friends</h2>
+        <ul class="friendList">
+          <!-- List of top friends will be dynamically added here -->
+        </ul>
+      </div>
+    </div>
+
+    <!-- Notification Sidebar -->
+    <div id="notification-sidebar" class="note-sidebar">
+      <div class="sidebar-header">
+        <h3>Notifications</h3>
+        <div class="close-sidebar" id="close-notification-sidebar">&times;</div>
+      </div>
+      <div class="sidebar-content" id="notification-content">
+        <!-- Notifications will be dynamically loaded here -->
+      </div>
+    </div>
+
+    <!-- Top Header -->
+    <div id="top-header" class="top-header noselect">
+     
+      <div class="vertical-menu">
+        <!-- Menu Bubbles -->
+        <div id="profile-bubble" class="menu-bubble"><i class="fas fa-user icon"></i></div><span>profile</span>
+        <div id="feed-bubble" class="menu-bubble"><i class="fas fa-rss icon"></i></div><span>Feed</span>
+        <div id="explore-bubble" class="menu-bubble"><i class="fas fa-compass icon"></i></div><span>Explore</span>
+        <!-- Community // Friends -->
+         <div id="people-bubble" class="menu-bubble toggle-btn"><i class="fa fa-users"></i></div><span>People</span>
+        <div id="inbox-bubble" class="menu-bubble"><i class="fas fa-envelope icon"></i></div>
+        <span>Inbox</span>
+        <div id="notification-bubble" class="menu-bubble"><i class="fas fa-bell icon"></i></div><span>Notifications</span>
+      </div>
+      <a href='/' class="main-logo"><h2>V i R U S <span class="version-number">v1.0</span></h2></a>
+    </div>     
+
+    <!-- Main Content -->
+    <div id="homepage-content" class="homepage-content">
+      <!-- Search Bar -->
+      <div id="search-bar">
+        <input type="text" id="search-input" placeholder="🔎 Search..." autocomplete="off">
+        <div id="search-results">
+          <div id="user-results" class="search-results-category"></div>
+          <div id="widget-results" class="search-results-category"></div>
+          <div id="community-results" class="search-results-category"></div>
+        </div>
+      </div>
+
+      <!-- Profile Content -->
+      <div class="profile-content section" style="display:none;">
+        ` + include('auth') + `
+        ${include('partials/user_profile', { user: user })}
+        ` + include('partials/widget') + `
+      </div>
+
+      <!-- Feed Content -->
+      <div class="feed-content section">
+        ` + include('partials/post_box') + `
+        <div class="grid-stack" id="dashboard-container"></div>
+        ` + include('partials/posts') + `
+      </div>
+
+      <!-- Explore Content -->
+      <div class="explore-content section" style="display:none;">
+        <div class="explore-columns">
+          <div class="explore-communities">
+            ` + include('community') + `
+            <script src="/js/community.js"></script>
+          </div>
+          <div class="explore-widgets">
+            <h3>Widgets</h3>
+            <div id="widget-list" class="widget-grid">
+              ` + include('partials/widget') + `
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Additional Sections -->
+      <div class="market-content section" style="display:none;">
+        <!-- Market content -->
+      </div>
+
+      <div class="inboxs-content section" style="display:none;">
+        <!-- Inbox content -->
+      </div>
+    </div>
+
+    <!-- Chat Sidebar -->
+    <div id="chat-sidebar" class="chat-sidebar">
+      <!-- Chat Components -->
+      <div id="chat-search">
+        <input type="text" id="chat-search-input" placeholder="Search users...">
+        <div id="chat-search-results"></div>
+      </div>
+      <div id="recent-chats-container"></div>
+      <div id="friends-list" class="friends-list"></div>
+      <div id="chat-header"></div>
+      <div id="chat-window" class="chat-window"></div>
+      <div id="chat-area" class="chat-area"></div>
+      <div class="chat-input-container">
+        <input type="text" id="chat-message-input" placeholder="Type a message...">
+        <button id="send-message-btn">Send</button>
+      </div>
+    </div>
+
+    <!-- Include the navigation bar -->
+    ` + include('partials/navbar') + `
+  `
+}) %>

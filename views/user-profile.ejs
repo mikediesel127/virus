@@ -1,0 +1,72 @@
+<!-- user-profile.ejs -->
+<div id="user-profile" class="profile-component">
+  <!-- User's profile information -->
+  <div class="profile-header">
+    <img src="uploads/<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic">
+    <h3 class="username"><%= user.username %></h3>
+    <!-- ... other profile info ... -->
+  </div>
+  <!-- User's posts -->
+<div id="user-posts-container">
+  <!-- User posts will be dynamically inserted here -->
+</div>
+  <!-- User's posts -->
+<div id="user-posts-box">
+  <!-- User posts will be dynamically inserted here -->
+</div>
+  <!-- Posts Display -->
+
+</div>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="components.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <!-- Global scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include Swiper's JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Include Lozad.js from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+  <!-- My Scripts -->
+  <script src="app.js"></script>
+<script>  
+// This script would be included at the bottom of your user profile page (user.ejs or similar)
+
+// Function to load user posts
+function loadUserPosts(userId) {
+  $.ajax({
+    url: `/api/posts/user/${userId}`, // Assuming you have an endpoint like this
+    type: 'GET',
+    success: function(posts) {
+      // Assuming 'posts' is an array of post objects
+      posts.forEach(function(post) {
+        // Create HTML for each post - this is a simplistic example
+        var postHtml = `
+          <div class="post">POST
+            <h3>${post.title}</h3>
+            <p>${post.content}</p>
+          </div>
+        `;
+        // Append the post HTML to a container in your user profile page
+        $('#user-posts-container').append(postHtml);
+      });
+    },
+    error: function(error) {
+      console.error("Error loading user's posts:", error);
+      // Handle errors (e.g., display a message to the user)
+    }
+  });
+}
+
+// When the document is ready, extract 'userId' and load posts
+$(document).ready(function() {
+  var userId = new URLSearchParams(window.location.search).get('userId');
+  if (userId) {
+    loadUserPosts(userId);
+  }
+});
+
+</script><div id="user-communities">
+
+</div>

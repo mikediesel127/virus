@@ -1,0 +1,161 @@
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link rel="stylesheet" type="text/css" href="components.css">
+<link rel="stylesheet" type="text/css" href="main.css">
+
+    <!-- Include Swiper's JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Include jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include jQuery UI -->
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+  <script src="app.js"></script>
+  <script src="js/message.js"></script>
+  <!-- <script src="app.js"></script> -->
+  <!-- <script src="js/widgets.js"></script> -->
+<!-- <script type="text/javascript" src="/public/app.js"></script> -->
+<!-- <script type="text/javascript" src="js/app.js"></script> -->
+<!-- User Profile Component -->
+<div id="user-profile" class="profile-component">
+  <div class="profile-header">
+    <img src="/uploads/<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic">
+   <h3 class="other-username"><%= user.username %></h3>
+   <!-- <h3 class="other-username"><%= user.savedWidgets %></h3> -->
+
+    <p class="bio">This is a short bio...</p>
+  </div>
+  <div class="profile-stats">
+    <div class="stat-tile">
+      <span class="stat-number" id="posts-count">120</span>
+      <span class="stat-label">Posts</span>
+    </div>
+<!-- Add this to your profile component -->
+<div class="stat-tile">
+  <span class="stat-number" id="points-count">0</span>
+  <span class="stat-label">Points</span>
+</div>
+
+    <div class="stat-tile">
+      <span class="stat-number" id="creations-count">5</span>
+      <span class="stat-label">Communities</span>
+    </div>
+  </div>
+
+  <div class="profile-details">
+
+
+    <!-- Display different actions based on the viewer's relationship with the profile -->
+
+      <!-- Viewer is the owner of the profile -->
+      <!-- Add actions like edit profile, logout, etc. -->
+
+
+      <!-- Viewer is someone else -->
+      <!-- Add actions like message, connect, etc. -->
+<button id="message-button" data-user-id="<%= user._id %>" ><i class="fas fa-envelope btn"></i> Message</button>
+<!-- Consolidated action button -->
+<button id="add-friend-btn" data-user-id="<%= user._id %>"><i class="fas fa-user-plus btn"></i> Add</button>
+
+
+<script>
+  function checkFriendRequestStatus(profileUserId) {
+    const currentUserId = localStorage.getItem('userID');
+    
+    if (!currentUserId) {
+        console.error('Current user ID not found');
+        return;
+    }
+
+    $.ajax({
+        url: `/api/friendship-status/${currentUserId}/${profileUserId}`,
+        method: 'GET',
+        success: function(response) {
+            const addFriendBtn = $('#add-friend-btn');
+            switch (response.status) {
+                case 'friends':
+                    addFriendBtn.text('Friends').attr('disabled', true);
+                    break;
+                case 'request_sent':
+                    addFriendBtn.text('Request Sent').attr('disabled', true);
+                    break;
+                case 'request_received':
+                    addFriendBtn.text('Accept Request').attr('disabled', false);
+                    addFriendBtn.off('click').on('click', function() {
+                        acceptFriendRequest(profileUserId);
+                    });
+                    break;
+                default:
+                    addFriendBtn.text('Add Friend').attr('disabled', false);
+                    addFriendBtn.off('click').on('click', function() {
+                        sendFriendRequest(profileUserId);
+                    });
+                    break;
+            }
+        },
+        error: function(error) {
+            console.error('Error checking friendship status:', error);
+        }
+    });
+}
+
+  $(document).ready(function() {
+    const profileUserId = "<%= user._id %>"; // Get this from your rendered user data
+    checkFriendRequestStatus(profileUserId);
+  });
+</script>
+
+
+  </div>
+<!-- User Widgets Section -->
+<div id="user-widgets">
+    <h3>Widgets</h3>
+    <div id="widgets-container">
+
+    <div id="widget-container">
+        <!-- Widgets will be dynamically loaded here -->
+    </div>
+
+
+
+    </div>
+</div>
+<% if (widgets && widgets.length > 0) { %>
+  <div id="widget-container">
+    <% widgets.forEach(widget => { %>
+      <div class="widget-tile">
+        <h3 class="widget-title"><%= widget.name %></h3>
+        <div class="widget-elements">
+          <% widget.elements.forEach(element => { %>
+            <% if (element.type === 'text') { %>
+              <p><%= element.content %></p>
+            <% } else if (element.type === 'poll') { %>
+              <input type="text" value="<%= element.content %>" readonly>
+            <% } %>
+            <!-- Add other types as needed -->
+          <% }) %>
+        </div>
+      </div>
+    <% }) %>
+  </div>
+<% } else { %>
+  <div>No widgets for this user.</div>
+<% } %>
+
+
+
+
+    <!-- ACTION BAR--------------------- -->
+    <div id="action-bar">
+
+              <!-- Collab Session Creation Trigger Icon -->
+    <div id="session-creation-trigger" class="session-creation-trigger trigger">
+        <label>note </label><i class="fas fa-plus-circle"></i> <!-- FontAwesome icon or similar -->
+    </div>
+    </div>
+
+</div>
+<div id="other-user-widgets-container"></div>
+<!-- <script src="/js/community.js"></script> -->
+
+

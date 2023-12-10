@@ -1,0 +1,51 @@
+// Inside your script
+$(document).ready(function () {
+  const $searchInput = $('#search-input');
+  const $searchResults = $('#search-results');
+
+  // Simulate user data for demonstration
+  const users = [
+    { id: 1, username: 'john_doe' },
+    { id: 2, username: 'alice_wonder' },
+    { id: 3, username: 'bob_smith' },
+    // Add more user data as needed
+  ];
+
+  // Function to display search results
+  function displayResults(results) {
+    $searchResults.empty();
+
+    results.forEach((user) => {
+      const $resultItem = $(`<div class="search-result" data-user-id="${user.id}">${user.username}</div>`);
+      $resultItem.click(() => startMessaging(user.id, user.username));
+      $searchResults.append($resultItem);
+    });
+
+    $searchResults.show();
+  }
+
+  // Function to start messaging with a user
+  function startMessaging(userId, username) {
+    // Add your logic to start a messaging session with the selected user
+    console.log(`Start messaging with ${username} (ID: ${userId})`);
+
+    // For demonstration, you can redirect to a messaging page or open a modal.
+  }
+
+  // Event listener for input changes
+  $searchInput.on('input', function () {
+    const query = $(this).val().toLowerCase();
+
+    // Simulate search based on username (you can customize this logic)
+    const results = users.filter((user) => user.username.toLowerCase().includes(query));
+
+    displayResults(results);
+  });
+
+  // Hide search results when clicking outside the search bar
+  $(document).click(function (event) {
+    if (!$(event.target).closest('#search-bar').length && !$(event.target).closest('#search-results').length) {
+      $searchResults.hide();
+    }
+  });
+});

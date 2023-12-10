@@ -1,0 +1,1572 @@
+/* Button Styles */
+.button-primary, #submit-post {
+  width: 100%;
+/*  background-color: #313338e6;*/
+  background-color: #5d67df;
+      font-weight: 600;
+/*  background-color: var(--primary-color);*/
+  color: white;
+  border: none;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+
+.button-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.button-secondary {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.button-secondary:hover {
+  background-color: var(--hover-light);
+}
+
+.button-success {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.button-success:hover {
+  background-color: var(--success-dark);
+}
+
+.button-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+
+.button-danger:hover {
+  background-color: #c9302c;
+}
+
+.button-warning {
+  background-color: var(--warning-color);
+  color: white;
+}
+
+.button-warning:hover {
+  background-color: #ec971f;
+}
+button.like-btn{
+  padding: 9px !important;
+  border-radius: 55px !important;
+}
+
+/*COMMUNITY COMPONENT*/
+/* Profile Styles */
+.component {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Profile Styles */
+.profile-component {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+  text-align: center;
+}
+
+.profile-pic {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  position: relative;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.profile-pic:hover {
+  border-color: var(--info-color);
+}
+
+/* Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--secondary-color);
+/*    background-color: #cbcbcb;*/
+  color: var(--text-color);
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  overflow-x: auto;
+}
+
+.nav-item {
+  flex: 0 0 auto;
+  margin: 0 10px;
+/*  padding: 10px;*/
+  text-decoration: none;
+  color: var(--text-color);
+  white-space: nowrap;
+}
+
+.nav-item.active {
+  color: var(--info-color);
+}
+
+.post {
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  margin-bottom: 1em;
+  padding: 1em;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+/*  margin-bottom: 0.5em;*/
+}
+
+.post-info .username {
+  font-weight: bold;
+  color: #0056b3;
+  text-decoration: none;
+  margin-right: 0.5em;
+}
+
+.post-info .date {
+  font-size: 0.8em;
+  color: var(--text-light);
+}
+
+.post-content {
+    margin-left: 5px;
+/*    margin-bottom: 1em;*/
+    word-break: break-word;
+    display: flex;
+}
+
+/*// Additional style for the post-actions*/
+.post-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5em;
+}
+
+.post-actions button {
+  background: none;
+  border: 1px solid grey;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  transition: color 0.3s ease;
+  flex: 1;
+}
+
+.post-actions button i {
+  margin-right: 0.25em;
+}
+
+.action-btn{
+  border-radius: 25px;
+   background: none;
+  border: 1px solid grey;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5em;
+  transition: color 0.3s ease, border 0.3s ease;
+  flex: 1;
+}
+
+.action-btn:hover {
+  border-color: #0056b3; /* Change the border color on hover */
+}
+
+.action-btn i {
+  margin-right: 0.25em;
+}
+
+/*ADD POST TO UI ANIMATION---*/
+/* CSS Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the post element */
+.post-item {
+  animation: fadeIn 0.5s ease-out;
+}
+/*---END OF ANIMATION ADD POST*/
+/* Specific styles for each action button */
+.like-btn .fas.fa-heart {
+  color: #e74c3c; /* Red heart color */
+}
+
+.comment-btn .fas.fa-comment {
+  color: #95a5a6; /* Grey comment color */
+}
+
+.share-btn .fas.fa-share {
+  color: #853ba3; /* purple */
+}
+
+/* Hover effects for each button */
+.like-btn:hover .fas.fa-heart,
+.comment-btn:hover .fas.fa-comment,
+.share-btn:hover .fas.fa-share {
+  color: #34495e; /* Darken color on hover */
+}
+
+/* Increase the size of the icons slightly */
+.fas {
+  font-size: 1.2em;
+}
+
+/* Add a little margin to the right of the icon to separate it from text if needed */
+.fas + span {
+  margin-left: 5px;
+}
+
+.post-comments {
+  background: var(--hover-light);
+  padding: 10px;
+  border-radius: 4px;
+  display: none; /* Hidden by default */
+}
+
+/* Animation for comment section toggling */
+.toggle-slide {
+  display: block !important;
+  animation: slideDown 0.3s ease forwards;
+}
+
+@keyframes slideDown {
+  0% {
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+  100% {
+    transform: scaleY(1);
+    transform-origin: top;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar {
+    justify-content: flex-start;
+  }
+  .nav-item {
+    padding: 10px 15px;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-item span {
+    display: none;
+  }
+}
+
+/* Tooltip Styles */
+.tooltip {
+  visibility: hidden;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opactioty: 0;
+  transition: opacity 0.3s;
+}
+
+.profile-pic:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 4px;
+  padding: 5px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-dropdown .dropdown-content {
+  display: block;
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-content a {
+  color: var(--text-color);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+a{
+  color: #646464;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--hover-light);
+}
+
+/* Additional Options Styles */
+.additional-options .options-btn {
+  background-color: #f9f9f9;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.additional-options .options-content {
+  display: none;
+  padding: 10px;
+  border: 1px solid var(--border-color);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+}
+
+/* Ensure the container of the profile picture is positioned relatively */
+.profile-header {
+  position: relative; /* This is the key part */
+  text-align: center;
+}
+
+/* Adjust the dropdown styles */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  top: 10%; /* Position it right below the profile picture */
+  left: 20%; /* Center it horizontally */
+  transform: translateX(-50%) translateY(10px); /* Adjust vertical position and centering */
+  border-radius: 4px;
+  padding: 5px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.show-dropdown .dropdown-content {
+  display: block;
+  opacity: 1;
+}
+
+/*----SEARCH BAR---*/
+
+/*----SEARCH BAR---*/
+
+#search-input {
+    font-size: 1em;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    outline: none;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#search-input:focus {
+  box-shadow: 0 2px 6px rgba(108, 92, 231, 0.5); /* Subtle purple glow */
+}
+
+#search-bar {
+/*  position: fixed; /* Fixed positioning to stay in place */*/
+  bottom: 50px; /* Height of the navbar */
+  left: 0;
+  right: 0;
+  padding: 0 10px; /* Add padding if needed */
+  z-index: 1001; /* Above the navbar */
+  display: none;
+  width: 90vw;
+}
+
+#search-results {
+/*  position: absolute;*/
+  bottom: 100%; /* Positions the results above the search bar */
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden; /* Ensures the border radius applies to children */
+  box-shadow: 0 -4px 6px rgba(108, 92, 231, 0.1); /* Subtle shadow for depth */
+  visibility: hidden; /* By default, it should not be visible */
+  transform: translateY(10px); /* Start slightly below */
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  z-index: 1000; /* Ensures it's above other content */
+}
+
+/* When visible, fade in the search results and move up slightly */
+#search-results.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.search-result-item {
+  padding: 8px 12px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+  transition: background-color 0.2s ease;
+  transition: 0.3s;
+}
+
+.search-result-item:hover {
+  background-color: #f0f0f0; /* Light grey for hover */
+}
+
+.search-result-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.search-result-text {
+  color: #333; /* Dark grey for text */
+  font-weight: bold;
+}
+
+/* POST SUGGESTIONS */
+#suggestions-container {
+    position: relative;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    /* border: 1px solid black; */
+    border-top: none;
+    z-index: 1000;
+    width: 100vw;
+    /* opacity: 0; */
+    /* visibility: hidden; */
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#suggestions-container.visible {
+  visibility: visible;
+}
+
+.suggestion-item {
+    padding: 4px;
+    border-bottom: 1px solid #00000057;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0; /* Light grey for hover */
+}
+
+/*----------POST BOX NEW--------*/
+/* Tab Styles */
+.post-type-tabs {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 1em;
+}
+
+.tab-link {
+  padding: 10px 20px;
+  border: none;
+  background-color: #f0f0f0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.tab-link.active {
+  background-color: #ddd;
+/*  border-bottom: 2px solid var(--primary-color);*/
+  border-bottom: 2px solid #596894;
+}
+
+/* Post Box Container Styles */
+.post-box-container {
+  overflow: hidden;
+}
+
+.post-box {
+  display: none; /* Hide all by default */
+  transition: transform 0.3s ease-out;
+}
+
+/* Show the first post box by default */
+#post-box-text {
+  display: block;
+}
+
+/* Additional styles from your existing CSS */
+
+.additional-options {
+/*  display: flex;*/
+  align-items: center;
+  flex-wrap: wrap; /* Allows options to wrap onto the next line if needed */
+  gap: 10px; /* Spacing between options */
+}
+
+.category-option {
+  display: flex;
+  align-items: center;
+}
+
+#add-category-btn {
+  margin-right: 10px; /* Adjust spacing as needed */
+  min-width: 150px;
+      background: #a5a5ad;
+    color: white;
+
+}
+
+#category-search-container {
+  display: none; /* Initially hidden */
+}
+
+#category-search {
+  width: 200px; /* Example width */
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#category-results {
+  /* Styles for category results */
+}
+
+
+#category-search-container {
+  margin-top: 10px;
+}
+
+#category-results {
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 5px;
+  display: none;
+}
+
+
+
+/*.notification-dropdown:hover .notification-content {
+  display: block;
+}*/
+
+/* Style the notification button */
+
+
+/* Add this inside your components.css or a new stylesheet like community.css */
+.community-page-content {
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+
+/* Rest of the styles remain the same */
+
+
+#create-community-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+
+
+/*COMMMUNITY NEW--------------*/
+.community-page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.community-card {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.community-name {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.community-info p {
+  color: #666;
+  font-size: 0.9em;
+  margin: 5px 0;
+}
+
+.view-community-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 10px;
+}
+
+.view-community-btn:hover {
+  background-color: #0056b3;
+}
+
+
+
+
+/* UPDATEDC COMMUNITY PAGE----*/
+/* Add this to your components.css or a separate CSS file */
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
+
+.community-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.community-card img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.community-card-content {
+  padding: 15px;
+}
+
+.create-community-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.create-community-btn:hover {
+  background-color: #0056b3;
+}
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+  padding-top: 60px;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 5px;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add responsive design as needed */
+@media (max-width: 600px) {
+  .community-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/*----------------------NEW-------------*/
+/*----------------------NEW-------------*/
+/* Add this to your components.css or a separate CSS file */
+
+/* ... (previous styles) ... */
+
+/* Smooth transitions for modal */
+.modal .modal-content {
+  transition: transform 0.3s ease-out;
+}
+
+/* Color palette for the page */
+:root {
+  --primary-color: #5b8c85; /* Adjust the color to fit your design */
+  --secondary-color: #f4f4f2;
+  --accent-color: #f28a30;
+  --text-color: #333;
+}
+
+body {
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+}
+
+.community-page-content h1 {
+  color: var(--primary-color);
+}
+
+.create-community-btn {
+  background-color: var(--accent-color);
+  /* ... (other styles) ... */
+}
+
+/* ... (other styles) ... */
+
+/* Modal content animation */
+.modal-content {
+  transform: scale(0.7);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.modal-content.show {
+  transform: scale(1);
+  opacity: 1;
+}
+
+/* ... (other styles) ... */
+/* Add this to your components.css or a separate CSS file */
+
+/* Communities container */
+#community-list {
+display: flex;
+    gap: 20px;
+    margin: 20px;
+    /* overflow-y: auto; */
+    */: ;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+}
+
+/* Individual community card */
+.community-card {
+  background: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(33.333% - 20px); /* Three cards per row, adjust as needed */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Community card content */
+.community-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 10px;
+}
+
+.community-card p {
+  color: var(--text-color);
+  font-size: 0.9em;
+}
+
+/* Search bar */
+#search-bar {
+  margin: 20px;
+/*  position: relative;*/
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+}
+
+/* ... (other styles) ... */
+.community-card {
+  /* Your existing styles */
+  margin-bottom: 20px;
+}
+
+.connect-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.members-list {
+  margin-top: 10px;
+}
+
+.member-item {
+  display: inline-block;
+  background-color: #f2f2f2;
+  padding: 5px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+
+.join-btn {
+    /* background-color: var(--primary-color); */
+    background-color: #5d67df;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+.join-btn:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+.members-list {
+  list-style: none;
+  padding: 0;
+}
+
+.member-item {
+  background-color: #f3f3f3;
+  border: 1px solid #ddd;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+
+/*COMMUNITY IN PROFILE SECTIO*/
+.profile-component {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+.profile-communities {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.communities-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+#top-header a {
+      display: flex;
+    color: #f2f2f2;
+    text-decoration: none;
+    justify-content: center;
+}
+
+.community-card {
+  flex-basis: calc(50% - 10px); /* Two cards per row on mobile */
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .community-card {
+    flex-basis: calc(33.333% - 10px); /* Three cards per row on tablets */
+  }
+}
+
+@media (min-width: 992px) {
+  .community-card {
+    flex-basis: calc(25% - 10px); /* Four cards per row on desktop */
+  }
+}
+
+
+/* Community Page Styles */
+.community-page-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
+}
+
+
+
+.community-card {
+  background: #ffffff;
+  border: 1px solid #e1e1e1;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.community-card h3 {
+  background: #f4f4f4;
+  color: #333;
+  padding: 15px;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.community-card p {
+  padding: 0 15px 15px;
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.connect-btn {
+  background: #5cb85c;
+  color: #ffffff;
+  padding: 10px 15px;
+  display: block;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.connect-btn:hover {
+  background: #4cae4c;
+}
+
+.connect-btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Add smooth transitions for modal */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  -webkit-animation-name: fadeIn; /* Fade in the background */
+  -webkit-animation-duration: 0.4s;
+  animation-name: fadeIn;
+  animation-duration: 0.4s
+}
+
+.modal-content {
+  position: fixed;
+  bottom: 0;
+  background-color: #fefefe;
+  width: 100%;
+  -webkit-animation-name: slideIn;
+  -webkit-animation-duration: 0.4s;
+  animation-name: slideIn;
+  animation-duration: 0.4s
+}
+
+@-webkit-keyframes slideIn {
+  from {bottom: -300px; opacity: 0} 
+  to {bottom: 0; opacity: 1}
+}
+
+@keyframes slideIn {
+  from {bottom: -300px; opacity: 0}
+  to {bottom: 0; opacity: 1}
+}
+
+@-webkit-keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0} 
+  to {opacity: 1}
+}
+
+
+
+/*----------WIDGETS--------------*/
+/*----------WIDGETS--------------*/
+.widget-editor {
+    max-width: 600px;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.widget-title {
+    text-align: center;
+    color: #333;
+}
+
+.widget-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.element-palette {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.draggable-element {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f7f7f7;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.draggable-element:hover {
+    background-color: #eaeaea;
+}
+
+.widget-canvas {
+    min-height: 100px;
+    border: 1px dashed #ddd;
+    margin-bottom: 10px;
+}
+
+.widget-controls {
+    text-align: center;
+}
+
+.widget-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.widget-btn:hover {
+    background-color: #eaeaea;
+}
+
+.cancel {
+    margin-left: 10px;
+    background-color: #ffdddd;
+}
+
+.drop-area.highlight {
+    border: 2px dashed #007bff;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.draggable-elements {
+    cursor: move;
+}
+
+#widget-canvas {
+    min-height: 200px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.canvas-text-field {
+    display: block;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.canvas-poll {
+    margin-bottom: 10px;
+}
+
+.poll-option {
+    display: block;
+    margin-bottom: 5px;
+    padding: 5px;
+}
+
+.widget-display-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.widget-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.widget-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+}
+
+.widget-title {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+  margin-left: 25px !important;
+}
+
+.widget-content {
+  /* Additional styles for widget content */
+}
+.widget-content.widget-text {
+    background: white;
+    border-bottom: 1px solid lightgrey;
+}
+
+
+
+/*-------WIDGET SETTINGS UI----------*/
+.widget-settings {
+    position: relative;
+    display: inline-block;
+    float: right;
+        width: 25px;
+}
+
+.settings-icon {
+    cursor: pointer;
+    /* Style as needed */
+}
+
+.settings-menu {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.settings-item {
+    padding: 4px 6px;
+    text-decoration: none;
+    display: block;
+    color: black;
+    cursor: pointer;
+}
+
+.settings-item:hover {
+    background-color: #f1f1f1;
+}
+
+.widget-creation-trigger {
+    cursor: pointer;
+    text-align: center;
+/*    margin-top: 20px;*/
+}
+
+.trigger:hover{
+    cursor: pointer;
+  background-color: #82e4e261;
+}
+
+
+i.fas.fa-plus-circle {
+/*    color: #767676;*/
+    color: #2a2a2a;
+}
+
+#widget-creation{
+    display: none;
+}
+
+#action-bar{
+  padding: 5px;
+  border-radius: 10px;
+/*    background-color: #f1f1f1;*/
+    width: 100%;
+    margin-top: 15px;
+        justify-content: flex-start;
+    flex-wrap: nowrap;
+    display: flex;
+}
+
+.trigger {
+      text-align: center;
+    box-shadow: #8080805c 1px 1px;
+    border-radius: 12px;
+    padding: 5px;
+    border: 1px solid #80808047;
+    background: #e1e1e1;
+    margin: 5px;
+}
+
+.trigger label{
+  cursor: pointer;
+}
+.canvas-text-field{
+  width: 95%;
+}
+
+input.widget-element {
+    width: 95%;
+}.canvas-text-field {
+    width: 95%;
+}
+i.fas.fa-search.icon {
+    color: #ffffff;
+}
+/*----------------SEARCH AND MESSAGE*/
+/* Add this to your stylesheet */
+#messaging-container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+#search-bar {
+  margin-bottom: 20px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+/* Style the search results container */
+#search-results {
+transition: 0.3s !important;
+  max-height: 200px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Style each search result item */
+.search-result {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+div#search-bubble {
+    background: #5663eb;
+}
+
+.search-result:hover {
+  background-color: #f5f5f5;
+}
+
+
+/* Add this to your stylesheet or style tag */
+.back-to-profile-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+  margin-top: 10px;
+}
+
+
+
+/*---------SIDEBAR-----------*/
+/* Add these styles to your existing CSS */
+/* Sidebar Styles */
+.sidebar {
+  transition: 0.3s;
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: -250px; /* Initial position off the screen */
+  width: 250px;
+  height: 100%;
+  background-color: #313338; /* Updated background color */
+  overflow-x: hidden;
+  transition: 0.5s; /* Add a transition effect for smooth animation */
+  padding-top: 50px;
+}
+
+.sidebar a,
+.sidebar h2 {
+  padding: 15px 15px 15px 32px;
+  text-decoration: none;
+  font-size: 18px;
+  color: #fff; /* Updated text color */
+  display: block;
+  transition: 0.3s;
+      padding: 0px;
+    margin: 0px;
+}
+
+.sidebar a:hover,
+.sidebar h2:hover {
+  background-color: #4CAF50; /* Updated hover background color */
+  color: #1f1f1f; /* Updated hover text color */
+}
+
+.sidebar .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  color: #fff; /* Updated close button color */
+  cursor: pointer;
+}
+
+/* Adjust the content when the sidebar is open */
+.sidebar-open {
+    padding-left: 10px;
+  margin-left: 250px;
+  transition: margin-left 0.5s;
+      z-index: 8878;
+}
+
+div#toggleSidebar {
+  cursor: pointer;
+}
+
+/* Top Communities and Top Friends Styles */
+.sidebar-section {
+  margin-bottom: 20px;
+}
+
+.sidebar-section h3 {
+  margin-bottom: 10px;
+  color: #23a55a; /* Section title color */
+}
+
+.sidebar-section ul {
+  list-style: none;
+  padding: 0;
+  max-height: 200px; /* Set a maximum height for scrolling */
+  overflow-y: auto;
+}
+
+.top-friends{
+  color: green;
+}
+
+.top-communities{
+  color: #f23f42 !important;
+}
+
+.community-item,
+.friend-item {
+  color: #fff; /* List item text color */
+  list-style: none;
+/*  margin-bottom: 8px;*/
+  cursor: pointer;
+}
+
+.community-item:hover,
+.friend-item:hover {
+  color: #4CAF50; /* Hover text color */
+}
+
+button#leave-community-btn {
+    background: #f23f42 ;
+    color: #f0f0f0;
+}
+
+
+/*--------------END OF SIDEBAR----------*/
+.btn.fas.fa-user-plus {
+    color: #5663eb;
+}
+.btn.fas.fa-envelope {
+  color: #5663eb;
+}
+.other-profile-btn{
+  color: #5663eb;
+}
+
+/*--------------NOTIFICATIONS------------------*/
+/*--------------NOTIFICATIONS------------------*/
+/* CSS for the notification dropdown */
+#notification-dropdown {
+  display: none;
+  position: fixed;
+  top: 60px; /* Adjust the top position based on your layout */
+  right: 10px; /* Adjust the right position based on your layout */
+  width: 200px; /* Set the width of the dropdown */
+  background-color: #3133382b; /* Set the background color */
+  border: 1px solid #ccc; /* Add a border for better visibility */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  z-index: 1000; /* Set a high z-index to ensure it's above other elements */
+
+  padding-top: 20px;
+}
+
+#notification-dropdown h3{
+  display: flex;
+    margin: 0;
+    font-family: monospace;
+    margin-left: 10px;
+    align-items: baseline;
+    align-content: center;
+    justify-content: center;
+}
+
+#friend-request-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.friend-request-details {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  display: flex;
+  justify-content: space-between;
+}
+
+.accept-btn, .reject-btn {
+  background-color: #4CAF50; /* Green for accept */
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background-color: #f23f42; /* Red for reject */
+}
+.accept-btn {
+  background-color: #23a55a;
+}
+
+.notification-username {
+    margin: 5px 0;
+    color: #e7e7e7;
+    margin-left: 10px;
+}
+
+#friend-request-list li{
+  background-color: #313338;
+}
+
+
+.close-btn-notify{
+    /* padding: 10px; */
+    position: absolute;
+    /* margin: 10px; */
+    display: bl;
+    top: -8px;
+    right: 7px;
+    font-size: 24px;
+    color: #292929;
+    /* background: rebeccapurple; */
+    cursor: pointer;
+}
+
+/*---------------END OF NOTIFCATIONS------------------*/
+/*---------------END OF NOTIFCATIONS------------------*/

@@ -1,0 +1,41 @@
+<%- include('layout', {
+  title: 'Home Page',
+  body: `
+
+    <div id="homepage-content" class="homepage-content">
+      <div class="profile-content section">
+        <!-- Include user profile content here -->
+        ` + include('partials/user_profile') + `
+      </div>
+      <div class="feed-content section">
+        <!-- Include feed content here -->
+        <div class="post-box">
+          <!-- Include the post box partial -->
+          ` + include('partials/post_box') + `
+        </div>
+        <div class="posts">
+          <!-- Include the posts partial -->
+          ` + include('partials/posts') + `
+        </div>
+      </div>
+      <div class="explore-content section">
+        <!-- Include explore content here -->
+        <div class="post-box">
+          <!-- Include the post box partial -->
+          ` + include('partials/post_box') + `
+        </div>
+        <div class="posts">
+          <!-- Include the posts partial -->
+          ` + include('partials/posts') + `
+        </div>
+        <!-- Include the community section -->
+        ` + include('community') + `
+      </div>
+      <!-- Add more content sections as needed -->
+    </div>
+    <!-- Include the authentication container -->
+    
+    <!-- Include the navigation bar -->
+    ` + include('partials/navbar') + `
+  `
+}) %>

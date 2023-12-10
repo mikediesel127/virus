@@ -1,0 +1,31 @@
+
+    <div class="community-page-content">
+      <h1>Communities</h1>
+      <div id="community-list" class="community-grid">
+        <!-- Community cards will be dynamically inserted here -->
+      </div>
+      <button id="create-community-btn" class="create-community-btn">Create Community</button>
+      <!-- Additional community page content -->
+    </div>
+
+    <div id="search-bar">
+      <input type="text" id="search-input" placeholder="Search communities..." autocomplete="off">
+    </div>
+<div id="user-communities" class="user-communities">
+  <!-- User's communities will be rendered here -->
+</div>
+
+
+
+    <div id="create-community-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="create-community-form" class="community-form">
+          <input type="text" id="community-name" placeholder="Community Name" required>
+          <textarea id="community-description" placeholder="Community Description" required></textarea>
+          <button type="submit" class="btn">Create Community</button>
+        </form>
+      </div>
+    </div>
+   
+<script src="/js/community.js"></script>

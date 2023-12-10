@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VIRUS SOCIAL</title>
+  <link rel="stylesheet" href="main.css">
+  <link rel="stylesheet" href="components.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+  <div id="app">
+    <!-- Authentication Container -->
+    <div id="auth-container">
+      <!-- Login Form -->
+      <form id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+        <p>Don't have an account? <span id="show-register">Register</span></p>
+      </form>
+      <!-- Register Form -->
+      <!-- Register Form -->
+<form id="register-form" style="display: none;">
+  <h2>Register</h2>
+  <input type="text" id="new-username" placeholder="Username" required>
+  <!-- Removed email input -->
+  <input type="password" id="new-password" placeholder="Password" required>
+  <button type="submit">Register</button>
+  <p>Already have an account? <span id="show-login">Login</span></p>
+</form>
+
+    </div>
+
+<!-- User Profile Component -->
+<div id="user-profile" class="profile-component">
+  <div class="profile-header">
+    <img src="default-profile-pic.jpg" alt="Profile Picture" class="profile-pic">
+    <h3 class="username">Username</h3>
+    <p class="bio">This is a short bio...</p>
+    <button class="edit-profile-btn">Edit Profile</button>
+  </div>
+  <div class="profile-stats">
+    <div class="stat-tile">
+      <span class="stat-number" id="posts-count">120</span>
+      <span class="stat-label">Posts</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-number" id="comments-count">450</span>
+      <span class="stat-label">Comments</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-number" id="points-count">1520</span>
+      <span class="stat-label">Points</span>
+    </div>
+    <div class="stat-tile">
+      <span class="stat-number" id="creations-count">5</span>
+      <span class="stat-label">Creations</span>
+    </div>
+  </div>
+  <div class="profile-details">
+    <p><strong>Interests:</strong> <span class="interests">Technology, Science, Art</span></p>
+    <p><strong>Friends:</strong> <span class="friend-count">120</span></p>
+  </div>
+</div>
+
+
+    <!-- Profile Menu Dropdown (hidden by default) -->
+<div id="profile-menu" class="dropdown-content" style="display: none;">
+  <a href="#" id="view-profile">View Profile</a>
+  <a href="#" id="edit-profile">Edit Profile</a>
+  <a href="#" id="logout-button">Logout</a>
+</div>
+
+<!-- -----------------CREATE POST-------------------- -->
+<!-- Trigger/Open The Modal -->
+<!-- Post Type Tabs -->
+<div class="post-type-tabs">
+  <button class="tab-link active" data-post-type="text">Text</button>
+  <button class="tab-link" data-post-type="poll">Poll</button>
+  <button class="tab-link" data-post-type="challenge">Challenge</button>
+  <!-- Add more tabs for other post types -->
+</div>
+
+
+
+<!-- Post Box Container -->
+<div class="post-box-container">
+  <!-- Text Post Box -->
+  <div id="post-box-text" class="post-box">
+    <!-- Your existing text post box content -->
+    <textarea id="post-content" placeholder="What's on your mind?"></textarea>
+      <div id="suggestions-container" style="display:none;"></div>
+    <!-- ... rest of your form elements for a text post -->
+  </div>
+
+  <!-- Poll Post Box -->
+  <div id="post-box-poll" class="post-box" style="display:none;">
+    <!-- Your form elements for a poll post -->
+    <textarea id="poll-question" placeholder="Ask a question..."></textarea>
+    <!-- ... rest of your form elements for a poll post -->
+  </div>
+  
+  <!-- Challenge Post Box -->
+  <div id="post-box-challenge" class="post-box" style="display:none;">
+    <!-- Your form elements for a challenge post -->
+    <textarea id="challenge-description" placeholder="Describe the challenge..."></textarea>
+    <!-- ... rest of your form elements for a challenge post -->
+  </div>
+  <!-- Add more post boxes for other post types -->
+  
+  <!-- Shared Post Options -->
+  <div class="post-options">
+    <!-- ... your privacy options and additional options -->
+  </div>
+  
+<div class="additional-options">
+  <!-- ... existing additional options ... -->
+  <div class="category-option">
+    <button type="button" id="add-category-btn">Add Category</button>
+    <div id="category-search-container" style="display:none;">
+      <input type="text" id="category-search" placeholder="Type to search categories...">
+      <div id="category-results"></div>
+    </div>
+  </div>
+</div>
+
+
+  <!-- Post Button -->
+  <button class="submit-btn" id="submit-post">Post</button>
+</div>
+
+
+
+<!-- Posts Display -->
+<div id="posts-container">
+  <!-- Posts will be dynamically inserted here -->
+</div>
+
+  <div class="feed-container">
+  <div class="stories-bar">
+    <!-- Stories will be dynamically inserted here -->
+  </div>
+  <div class="trending-sidebar">
+    <!-- Trending topics/lists will be dynamically inserted here -->
+  </div>
+  <div class="main-feed">
+    <!-- Posts will be dynamically inserted here -->
+  </div>
+</div>
+
+
+  </div>
+
+<!-- Bottom Navigation Bar -->
+<div class="navbar">
+  <a href="#home" class="nav-item"><i class="fas fa-home icon"></i>Home</a>
+  <a href="#search" class="nav-item search-toggle"><i class="fas fa-search icon"></i>Search</a>
+  <a href="#post" class="nav-item"><i class="fas fa-plus-square icon"></i>Post</a>
+  <a href="#notifications" class="nav-item"><i class="fas fa-bell icon"></i>Notifications</a>
+  <a href="#profile" class="nav-item"><i class="fas fa-user icon"></i>Profile</a>
+</div>
+
+<!-- Search Input (hidden by default) -->
+<div id="search-bar" style="display: none;">
+  <input type="text" id="search-input" placeholder="Search..." autocomplete="off">
+  <div id="search-results">
+    <!-- Search results will be appended here -->
+  </div>
+</div>
+
+<!-- <button class="fab">+</button> -->
+
+
+<!-- Link Swiper's CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/swiper/swiper-bundle.min.css"
+/>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- Include Swiper's JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+<!-- Include Lozad.js from CDN -->
+<script src="https://cdn.jsdelivr.net/npm/lozad@1.16.0/dist/lozad.min.js"></script>
+
+
+<script src="app.js"></script>
+<script src="interactions.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,154 @@
+<!-- ------PROFILE NAV BUBBLES---------- -->
+<div class="post-type-tabs">
+  <button class="tab-link active" data-post-type="account">Account</button>
+  <button class="tab-link" data-post-type="widgets">Widgets</button>
+  <button class="tab-link" data-post-type="connections">Connections</button>
+  <!-- Add more tabs for other post types -->
+</div>
+
+  <div id="post-box-text" class="post-box post-box-text">
+
+  </div>
+
+
+<!----------- User Profile Component ------------>
+<!----------- User Profile Component ------------>
+<div id="user-profile" class="profile-component">
+  <div class="profile-header">
+
+      <div id="profile-header-info">
+          <% if (user && user.profilePicture) { %>
+          <img src="/uploads/<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic">
+        <% } else { %>
+          <!-- Provide a default image or alternative content if the user or profile picture is not available -->
+          <img src="default-profile-pic.jpg" alt="Default Profile Picture" class="profile-pic">
+        <% } %>
+
+
+          <h3 id="username" class="username">Username</h3>
+          <p class="bio">This is a short bio...</p>
+          <button class="edit-profile-btn">Edit</button>
+          <button id="logout-button">Logout</button>
+        </div>
+        <div class="profile-stats">
+          <div class="stat-tile">
+            <span class="stat-number" id="posts-count">120</span>
+            <span class="stat-label">Posts</span>
+          </div>
+
+</div>
+<div class="profile-tiles-section">
+
+</div>
+<!-- Add this to your profile component -->
+<div class="stat-tile">
+  <span class="stat-number" id="points-count">0</span>
+  <span class="stat-label">Points</span>
+</div>
+
+
+<div class="profile-communities-friends-section">
+  <!-- Communities Section -->
+  <div class="profile-communities">
+    <h3>Communities</h3>
+    <!-- List of communities -->
+  </div>
+
+  <!-- Friends Section -->
+  <div class="profile-friends">
+    <h3>Friends</h3>
+    <!-- List of friends -->
+  </div>
+</div>
+
+<!--  -->
+  </div>
+
+
+
+
+<div id="widget-selection">
+    <label for="widget-dropdown">Choose a Widget:</label>
+    <select id="widget-dropdown">
+        <!-- Options will be dynamically loaded here -->
+    </select>
+    <button id="add-widget-btn">Add Widget</button>
+</div>
+
+  <!-- Widget Tiles will be displayed here -->
+  <div id="widget-display-section" class="widget-display-section">
+    <!-- Widgets will be dynamically loaded here -->
+  </div>
+
+
+    <!-- ACTION BAR--------------------- -->
+    <div id="action-bar">
+          <!-- Widget Creation Trigger Icon -->
+    <div id="widget-creation-trigger" class="widget-creation-trigger trigger">
+        <label>widget </label><i class="fas fa-plus-circle"></i> <!-- FontAwesome icon or similar -->
+    </div>
+              <!-- Widget Creation Trigger Icon -->
+    <div id="project-creation-trigger" class="project-creation-trigger trigger">
+        <label>project </label><i class="fas fa-plus-circle"></i> <!-- FontAwesome icon or similar -->
+    </div>
+              <!-- Widget Creation Trigger Icon -->
+    <div id="session-creation-trigger" class="session-creation-trigger trigger">
+        <label>session </label><i class="fas fa-plus-circle"></i> <!-- FontAwesome icon or similar -->
+    </div>
+    </div>
+
+</div>
+
+<!-- ---------EDIT PROFILE------------ -->
+<!-- Edit Mode -->
+<div id="edit-profile" class="profile-component" style="display: none;">
+
+  <!-- Edit Profile Form -->
+<form id="edit-profile-form">
+  <!-- Username -->
+  <label for="edit-username">Username:</label>
+  <input type="text" id="edit-username" name="edit-username" required>
+
+  <!-- Other form fields go here -->
+
+  <!-- Current Profile Picture -->
+  <label for="edit-profile-pic">Current Profile Picture:</label>
+  <img src="/uploads" alt="Current Profile Picture" id="current-profile-pic" class="profile-pic">
+
+  <!-- Change Profile Picture -->
+  <label for="edit-profile-pic">Change Profile Picture:</label>
+<input type="file" id="file-input" name="profilePicture" accept="image/*">
+
+  <!-- Save Changes Button -->
+  <button type="button" id="save-changes-btn">Save Changes</button>
+</form>
+
+
+  <!-- ... form elements for editing ... -->
+  <button class="save-profile-btn">Save Changes</button>
+  <button class="back-to-profile-btn">Back to Profile</button>
+
+<!-- ------edit darkkmode-------- -->
+<div class='switch-options'>
+<label class="switch">
+  <input type="checkbox" id="dark-mode-toggle">
+    <span class="slider round"></span>
+    <label class='dark-mode-label'>darkmode</label>
+  </label>
+</div>
+
+<!-- -----edit background------- -->
+<div class="background-selection">
+    <div class="background-option" data-bg="bg-4.jpg" style="background-image: url('uploads/bg-4.jpg');"></div>
+    <div class="background-option" data-bg="13107748_5137843.jpg" style="background-image: url('uploads/13107748_5137843.jpg');"></div>
+    <div class="background-option" data-bg="bg-light-1.jpg" style="background-image: url('uploads/bg-light-1.jpg');"></div> 
+    <div class="background-option" data-bg="bg-5.jpg" style="background-image: url('uploads/bg-5.jpg');"></div>
+    <!-- Add more options as needed -->
+</div>
+
+</div>
+
+  <div id="widget-container" class="widget-container">
+    <!-- Widgets will be dynamically loaded here -->
+</div>
+

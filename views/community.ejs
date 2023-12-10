@@ -1,0 +1,28 @@
+<%- include('layout', {
+  title: 'Community Page',
+  body: `
+    <div class="community-page-content">
+      <h3>Communities </h3>
+      <button id="create-community-btn" class="btn">Create Community</button>
+
+      <div id="community-list" class="community-grid">
+        <!-- Community cards will be dynamically inserted here -->
+      </div>
+      <!-- Additional community page content -->
+    </div>
+
+    <div id="create-community-modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="create-community-form" class="community-form">
+          <input type="text" id="community-name" placeholder="Community Name" required>
+          <textarea id="community-description" placeholder="Community Description" required></textarea>
+          
+        </form>
+      </div>
+    </div>
+    <!-- Include the navigation bar -->
+    ` + include('partials/navbar') + `
+  `
+}) %>
+
